@@ -19,4 +19,10 @@ public class Points {
     public int getPointCount() {
         return points.size();
     }
+
+    public Point getPointSubtract() {
+        return points.stream()
+                .reduce(Point::subtractPoint)
+                .orElse(null);
+    }
 }
