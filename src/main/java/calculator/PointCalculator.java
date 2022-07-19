@@ -10,4 +10,9 @@ public class PointCalculator {
 
         return pointSubtract.getSumAndSqrt();
     }
+
+    public int squareArea(Points points) {
+
+        return points.getHeight() * points.getWidth();
+    }
 }

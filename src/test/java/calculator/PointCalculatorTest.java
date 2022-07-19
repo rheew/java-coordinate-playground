@@ -20,4 +20,15 @@ public class PointCalculatorTest {
 
         assertThat(distance).isEqualTo(6.403, offset(0.0099));
     }
+
+    @Test
+    void 사각형_넓이계산() {
+        final String input = "(10,10)-(22,10)-(22,18)-(10,17)";
+        final Points points = new Points(input);
+
+        final PointCalculator calculator = new PointCalculator();
+
+
+        assertThat(calculator.squareArea(points)).isEqualTo(96);
+    }
 }
