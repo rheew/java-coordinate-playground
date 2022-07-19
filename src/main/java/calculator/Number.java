@@ -2,6 +2,8 @@ package calculator;
 
 import lombok.Getter;
 
+import java.util.Objects;
+
 @Getter
 public class Number {
 
@@ -26,7 +28,20 @@ public class Number {
         number = Math.pow(number, i);
     }
 
-    public void sqrt() {
-        number = Math.sqrt(number);
+    public int subtractToInt(Number number) {
+        return (int) (this.number - number.getNumber());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Number number1 = (Number) o;
+        return Double.compare(number1.number, number) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
     }
 }

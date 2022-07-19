@@ -38,4 +38,15 @@ public class Point {
     public double getSumAndSqrt() {
         return Math.sqrt(x.getNumber() + y.getNumber());
     }
+
+    public Point checkSameLine(Point point) {
+        if (x.equals(point.getX())) {
+            return point;
+        }
+        if (y.equals(point.getY())) {
+            return point;
+        }
+
+        throw new IllegalArgumentException("직사각형이 아닙니다.");
+    }
 }
